@@ -1,14 +1,19 @@
-package by.bsuir.Random.controller;
+package by.bsuir.Random.controller.mapings;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
 
 
-public class MappingInt {
-
+public class MappingIntWithNumber {
+    @SerializedName("Number")
+    private Integer number ;
     @SerializedName("ItemList")
     private List<Integer> itemList ;
+
+    public Integer getNumber() {
+        return number;
+    }
 
     public List<Integer> getItemList() {
         return  this.itemList;
@@ -17,11 +22,11 @@ public class MappingInt {
     public void setItemList(List<Integer> itemList) {
         this.itemList = itemList;
     }
-    public MappingInt(List<Integer> inList){
+    public MappingIntWithNumber(List<Integer> inList){
         setItemList(inList);
 
     }
-    public MappingInt(){
+    public MappingIntWithNumber(){
         super();
 
     }
