@@ -2,17 +2,13 @@ package by.bsuir.Random.controller;
 
 
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
 import by.bsuir.Random.controller.mapings.MappingInt;
-import by.bsuir.Random.controller.mapings.MappingIntWithNumber;
+import by.bsuir.Random.controller.mapings.MappingMatrix;
 import by.bsuir.Random.entity.myRandom;
 import com.google.gson.Gson;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
 
 import org.springframework.web.bind.annotation.*;
 
@@ -20,17 +16,14 @@ import org.springframework.web.bind.annotation.*;
 public class RandomController {
     myRandom random;
 
-    @PostMapping(value = "/random")
-    public List<Integer> getRandom(@RequestBody String jsonString) {
+    @PostMapping(value = "/mul")
+    public List<Integer> mulMatrix(@RequestBody String jsonString) {
         {
 
             Gson g=new Gson();
-             MappingInt p = g.fromJson(jsonString, MappingInt.class);
+            MappingMatrix p = g.fromJson(jsonString, MappingMatrix.class);
             // JsonObject jsonObject=JSON.parse(jsonString);
-            return p.getItemList().
-                    stream().
-                    map(u->random.getRand(u)).
-                    collect(Collectors.toList());
+            return p.;
 
             //Gson g=new Gson();
             //MappingInt p = g.fromJson(jsonString, MappingInt.class);
@@ -51,7 +44,7 @@ public class RandomController {
         {
 
             Gson g=new Gson();
-            MappingIntWithNumber p = g.fromJson(jsonString, MappingIntWithNumber.class);
+            MappingMatrix p = g.fromJson(jsonString, MappingMatrix.class);
             //JsonObject jsonObject=JSON.parse(jsonString);
             return p.getItemList().
                     stream().
