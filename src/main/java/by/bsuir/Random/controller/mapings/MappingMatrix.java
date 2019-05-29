@@ -5,28 +5,29 @@ import java.util.List;
 
 
 
-public class MappingIntWithNumber {
-    @SerializedName("Number")
-    private Integer number ;
-    @SerializedName("ItemList")
-    private List<Integer> itemList ;
+public class MappingMatrix {
+    @SerializedName("FirstMatrixRowNumber")
+    private Integer FirstMatrixRowNumber ;
+    @SerializedName("SecondMatrixRowNumber")
+    private Integer SecondMatrixRowNumber ;
+    @SerializedName("FirstMatrixColumnNumber")
+    private Integer FirstMatrixColumnNumber ;
+    @SerializedName("SecondMatrixColumnNumber")
+    private Integer SecondMatrixColumnNumber ;
+    @SerializedName("FirstMatrix")
+    private double[][] FirstMatrix;
+    @SerializedName("SecondMatrix")
+    private double[][] SecondMatrix;
 
-    public Integer getNumber() {
-        return number;
+    public double[][] getFirstMatrix() {
+        return FirstMatrix;
     }
 
-    public List<Integer> getItemList() {
-        return  this.itemList;
+    public double[][] getSecondMatrix() {
+        return SecondMatrix;
     }
 
-    public void setItemList(List<Integer> itemList) {
-        this.itemList = itemList;
-    }
-    public MappingIntWithNumber(List<Integer> inList){
-        setItemList(inList);
-
-    }
-    public MappingIntWithNumber(){
+    public MappingMatrix(){
         super();
 
     }
